@@ -1,0 +1,87 @@
+@import url(https://fonts.googleapis.com/css?family=Seaweed+Script);
+
+html,body {
+    background-color: #ccc;
+}
+
+.header {
+    width: 100%;
+    text-align: center;
+}
+
+.title {
+    font-size: 2rem;
+    font-family: 'Seaweed Script', cursive;
+}
+
+.coordinate div:last-of-type {
+    margin-top: 20px;
+}
+
+/**
+ * TOPS & BOTTOM
+ */
+.tops, .bottom {
+    position: relative;
+    width: 100%;
+    height: 250px;
+
+}
+
+.tops img, .bottom img {
+    position: absolute;
+    width: auto;
+    height: 100%;
+    border: 5px solid #eee;
+}
+
+.tops img {
+    left: -300px;
+}
+
+.bottom img {
+    right: -300px;
+}
+
+.tops img.active {
+    left: 50%;
+    transform: translate(-50%) rotate(1deg);
+
+    animation-duration: 0.8s;
+    animation-name: slidein-from-left;
+    animation-iteration-count: 1;
+}
+
+.bottom img.active {
+    right: 50%;
+    transform: translate(50%) rotate(-1deg);
+
+    animation-duration: 0.8s;
+    animation-name: slidein-from-right;
+    animation-iteration-count: 1;
+}
+
+/**
+ * Animation Keyframe
+ */
+@keyframes slidein-from-left {
+    from {
+        left: -250px;
+    }
+
+    to {
+        left: 50%;
+        transform: translate(-50%)  rotate(1deg);
+    }
+}
+
+@keyframes slidein-from-right {
+    from {
+        right: -250px;
+    }
+
+    to {
+        right: 50%;
+        transform: translate(50%) rotate(-1deg);
+    }
+}
